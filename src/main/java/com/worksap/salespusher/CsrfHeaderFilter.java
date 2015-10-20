@@ -1,4 +1,4 @@
-package com.worksap;
+package com.worksap.salespusher;
 
 import java.io.IOException;
 

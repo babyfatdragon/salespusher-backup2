@@ -1,4 +1,4 @@
-package com.worksap;
+package com.worksap.salespusher;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;

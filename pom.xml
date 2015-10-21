@@ -25,6 +25,7 @@
 		<jquery.version>2.1.4</jquery.version>
 		<bootstrap.version>3.3.4</bootstrap.version>
 		<angularjs.version>1.4.7</angularjs.version>
+		<mysql-connector-java.version>5.1.37</mysql-connector-java.version>
 	</properties>
 
 	<dependencies>
@@ -54,7 +55,7 @@
 		<dependency>
 		   <groupId>mysql</groupId>
 		   <artifactId>mysql-connector-java</artifactId>
-		   <version>5.1.36</version>
+		   <version>${mysql-connector-java.version}</version>
 		</dependency>
 	</dependencies>
 	

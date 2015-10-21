@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import com.worksap.salespusher.utils.PasswordHash;
 
 @Entity
-@Table(name="User")
+@Table(name="users")
 public class UserEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

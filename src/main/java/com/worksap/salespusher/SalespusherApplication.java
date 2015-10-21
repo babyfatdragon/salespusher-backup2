@@ -32,7 +32,4 @@ public class SalespusherApplication {
     public static void main(String[] args) {
         SpringApplication.run(SalespusherApplication.class, args);
     }
-
-    private static final Logger log = LoggerFactory.getLogger(SalespusherApplication.class);
-
 }

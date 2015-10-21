@@ -1,11 +1,11 @@
 package com.worksap.salespusher.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.worksap.salespusher.entity.UserEntity;
 
-public interface UserRepository extends CrudRepository<UserEntity, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-    UserEntity findByusername(String username);
+    UserEntity findByUsername(String username);
 }
 

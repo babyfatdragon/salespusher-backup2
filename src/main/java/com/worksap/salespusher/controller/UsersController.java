@@ -1,5 +1,6 @@
 package com.worksap.salespusher.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,4 +26,11 @@ public class UsersController {
 	public List<UserEntity> getUsers(){
 			return userRepository.findAll();
 	}
+	
+	@RequestMapping("/user")
+	public Principal user(Principal user) {
+		return user;
+	}
+	
+	
 }

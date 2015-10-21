@@ -12,15 +12,13 @@
 	</head>
 	
 	<body ng-app="salespusher" ng-cloak class="ng-cloak">
-		<div ng-controller="NavigationCtrl" class="container">
+		<div ng-controller="NavigationCtrl as panel" class="container">
 			<ul class="nav nav-pills" role="tablist">
-				<li class="active"><a href="#/">home</a></li>
-				<li><a href="#/login">login</a></li>
+				<li ng-class="{active: panel.isSelected(1)}"><a href="#/" ng-click="panel.selectTab(1)">home</a></li>
+				<li ng-class="{active: panel.isSelected(2)}"><a href="#/users" ng-click="panel.selectTab(2)" ng-show="authenticated">users</a></li>
+				<li ng-class="{active: panel.isSelected(3)}"><a href="#/login" ng-click="panel.selectTab(3)" ng-hide="authenticated">login</a></li>
 				<li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
 			</ul>
-		</div>
-		<div class="container">			
-		<button type="button" ng-controller="UsersCtrl" ng-click="getUsers()" class="btn">Get all users!</button>	
 		</div>
 		<div ng-view class="container">
 		</div>

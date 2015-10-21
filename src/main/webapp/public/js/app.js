@@ -13,6 +13,11 @@
 			templateUrl : '/partials/_login.html',
 			controller : 'NavigationCtrl'
 		})
+		.when('/users',{
+			templateUrl: '/partials/_users.html',
+			controller: 'UsersCtrl',
+			controllerAs: 'users'
+		})
 		.otherwise('/');
 		$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';	//disable basic http authentication dialog
 	})

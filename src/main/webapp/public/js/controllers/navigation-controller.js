@@ -1,5 +1,16 @@
 (function(){
 	angular.module('salespusher.controllers').controller('NavigationCtrl',['$rootScope','$scope','$http','$location', function($rootScope, $scope, $http, $location) {
+		/*Set active class for clicked panel*/
+		this.tab = 1;
+		
+		this.isSelected = function(checkTab){
+			return this.tab === checkTab;
+		}
+		this.selectTab = function(setTab){
+			this.tab = setTab;
+		}
+				
+		/*authentication, login & logut*/
 		var authenticate = function(credentials, callback) {
 			var headers = credentials ? {authorization : "Basic " + btoa(credentials.username + ":" + credentials.password)} : {};
 			$http.get('user', {headers : headers}).success(function(data) {

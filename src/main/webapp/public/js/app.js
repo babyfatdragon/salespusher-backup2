@@ -24,6 +24,8 @@
 			controller: 'ProductsCtrl'
 		})
 		.otherwise('/');
-		$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';	//disable basic http authentication dialog
+		
+		/* disable basic http authentication dialog */
+		$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';	
 	})
 })();

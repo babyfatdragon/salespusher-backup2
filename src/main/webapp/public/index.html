@@ -16,16 +16,25 @@
 			<ul class="nav nav-pills" role="tablist">
 				<li ng-class="{active: panel.isSelected(1)}"><a href="#/" ng-click="panel.selectTab(1)">home</a></li>
 				<li ng-class="{active: panel.isSelected(2)}"><a href="#/users" ng-click="panel.selectTab(2)" ng-show="authenticated">users</a></li>
-				<li ng-class="{active: panel.isSelected(3)}"><a href="#/login" ng-click="panel.selectTab(3)" ng-hide="authenticated">login</a></li>
+				<li ng-class="{active: panel.isSelected(3)}"><a href="#/products" ng-click="panel.selectTab(3)" ng-show="authenticated">products</a></li>
+				<li ng-class="{active: panel.isSelected(4)}"><a href="#/login" ng-click="panel.selectTab(4)" ng-hide="authenticated">login</a></li>
 				<li ng-show="authenticated"><a href="" ng-click="logout()">logout</a></li>
 			</ul>
 		</div>
 		<div ng-view class="container">
 		</div>
+		
+		<!-- Resources -->
+		<script src="js/resources/main.js"></script>		
+		<script src="js/resources/user-resources.js"></script>
+		<script src="js/resources/product-resources.js"></script>	
+		
+		<!-- Controllers -->
 		<script src="js/controllers/main.js"></script>
 		<script src="js/controllers/home-controller.js"></script>
 		<script src="js/controllers/navigation-controller.js"></script>
 		<script src="js/controllers/users-controller.js"></script>
+		<script src="js/controllers/products-controller.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>

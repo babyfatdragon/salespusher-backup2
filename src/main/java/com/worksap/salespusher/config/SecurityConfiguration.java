@@ -30,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http
 		.httpBasic().and()
 		.authorizeRequests()
-		.antMatchers("/index.html", "/partials/_home.html", "/partials/_login.html", "/partials/_users.html", "/").permitAll().anyRequest()
+		.antMatchers("/index.html", "/templates/partials/_home.html", "/templates/partials/_login.html", "/templates/partials/_users.html", "/").permitAll().anyRequest()
 		.authenticated().and()
 		
 		.formLogin()

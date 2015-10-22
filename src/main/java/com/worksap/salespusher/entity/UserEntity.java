@@ -23,13 +23,12 @@ public class UserEntity {
 	private String lastname;
 	private String email;
 	@Column(name="office_id")
-	private String office;
-	
+	private int office;
 	private String role;
 	
 	protected UserEntity() {}
 	
-	public UserEntity(String username, String password, String firstname, String lastname, String email,String office, String role){
+	public UserEntity(String username, String password, String firstname, String lastname, String email,int office, String role){
 		this.username = username;
 		this.firstname = firstname;
 		this.lastname = lastname;
@@ -91,11 +90,11 @@ public class UserEntity {
 		this.password = password;
 	}
 
-	public String getOffice() {
+	public int getOffice() {
 		return office;
 	}
 
-	public void setOffice(String office) {
+	public void setOffice(int office) {
 		this.office = office;
 	}
 	

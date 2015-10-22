@@ -1,22 +1,27 @@
 (function (){
 	var app = angular.module('salespusher', [
 		'ngRoute',
-		'salespusher.controllers'
+		'ngResource',
+		'salespusher.controllers',
+		'salespusher.resources'
 	])
 	.config(function($routeProvider, $httpProvider) {
 		$routeProvider
 		.when('/', {
-			templateUrl : '/partials/_home.html',
+			templateUrl : '/templates/partials/_home.html',
 			controller : 'HomeCtrl'
 		})
 		.when('/login', {
-			templateUrl : '/partials/_login.html',
+			templateUrl : '/templates/partials/_login.html',
 			controller : 'NavigationCtrl'
 		})
 		.when('/users',{
-			templateUrl: '/partials/_users.html',
-			controller: 'UsersCtrl',
-			controllerAs: 'users'
+			templateUrl: '/templates/partials/_users.html',
+			controller: 'UsersCtrl'
+		})
+		.when('/products',{
+			templateUrl: '/templates/partials/_products.html',
+			controller: 'ProductsCtrl'
 		})
 		.otherwise('/');
 		$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';	//disable basic http authentication dialog

@@ -24,9 +24,10 @@ public class UsersController {
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	@PreAuthorize("isAuthenticated()")
 	public List<UserEntity> getUsers(){
-			return userRepository.findAll();
+			return this.userRepository.findAll();
 	}
 	
+	/*	return current login user*/
 	@RequestMapping("/user")
 	public Principal user(Principal user) {
 		return user;

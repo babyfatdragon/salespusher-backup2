@@ -14,11 +14,11 @@ public class ProductEntity {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	@Column(name="product_name")
-	private String productName;
+	private String name;
 	@Column(name="first_category")
-	private Integer firstCategory;
+	private int firstCategory;
 	@Column(name="second_category")
-	private Integer secondCategory;
+	private int secondCategory;
 	private String overview;
 	private String technology;
 	private String specification;
@@ -26,8 +26,8 @@ public class ProductEntity {
 	
 	protected ProductEntity() {}
 
-	public ProductEntity(String productName,int firstCategory,int secondCategory, String overview, String technology, String specification, int price){
-		this.productName = productName;
+	public ProductEntity(String name,int firstCategory,int secondCategory, String overview, String technology, String specification, int price){
+		this.name = name;
 		this.firstCategory = firstCategory;
 		this.secondCategory = secondCategory;
 		this.overview = overview;
@@ -44,27 +44,27 @@ public class ProductEntity {
 		this.id = id;
 	}
 
-	public String getProductName() {
-		return productName;
+	public String getName() {
+		return name;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Integer getFirstCategory() {
+	public int getFirstCategory() {
 		return firstCategory;
 	}
 
-	public void setFirstCategory(Integer firstCategory) {
+	public void setFirstCategory(int firstCategory) {
 		this.firstCategory = firstCategory;
 	}
 
-	public Integer getSecondCategory() {
+	public int getSecondCategory() {
 		return secondCategory;
 	}
 
-	public void setSecondCategory(Integer secondCategory) {
+	public void setSecondCategory(int secondCategory) {
 		this.secondCategory = secondCategory;
 	}
 

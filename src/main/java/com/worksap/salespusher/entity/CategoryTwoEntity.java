@@ -13,13 +13,15 @@ public class CategoryTwoEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	@Column(name="categorytwo_name")
-	private String categoryTwoName;
+	private String name;
+	@Column(name="categoryone_id")
+	private long categoryOneId;
 	
 	protected CategoryTwoEntity() {}
 	
-	public CategoryTwoEntity(String categoryTwoName) {
-		this.categoryTwoName = categoryTwoName;
+	public CategoryTwoEntity(String name, long categoryOneId) {
+		this.name = name;
+		this.categoryOneId = categoryOneId;
 	}
 
 	public long getId() {
@@ -30,15 +32,19 @@ public class CategoryTwoEntity {
 		this.id = id;
 	}
 
-	public String getCategoryTwoName() {
-		return categoryTwoName;
+	public String getName() {
+		return name;
 	}
 
-	public void setCategoryTwoName(String categoryTwoName) {
-		this.categoryTwoName = categoryTwoName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	
-	
-	
+
+	public long getCategoryOneId() {
+		return categoryOneId;
+	}
+
+	public void setCategoryOneId(long categoryOneId) {
+		this.categoryOneId = categoryOneId;
+	}	
 }

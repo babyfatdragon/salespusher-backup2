@@ -1,6 +1,5 @@
 package com.worksap.salespusher.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,13 +12,12 @@ public class CategoryOneEntity {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
-	@Column(name="categoryone_name")
-	private String categoryOneName;
+	private String name;
 	
 	protected CategoryOneEntity(){}
 
-	public CategoryOneEntity(String categoryOneName) {
-		this.categoryOneName = categoryOneName;
+	public CategoryOneEntity(String name) {
+		this.name = name;
 	}
 
 	public long getId() {
@@ -30,12 +28,12 @@ public class CategoryOneEntity {
 		this.id = id;
 	}
 
-	public String getCategoryOneName() {
-		return categoryOneName;
+	public String getName() {
+		return name;
 	}
 
-	public void setCategoryOneName(String categoryOneName) {
-		this.categoryOneName = categoryOneName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	

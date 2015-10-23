@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS PRODUCTS (
 	product_name VARCHAR(25) NOT NULL,
 	first_category TINYINT NOT NULL,
 	second_category TINYINT NOT NULL,
-	overview VARCHAR(255),
-	technology VARCHAR(255),
-	specification VARCHAR(255),
+	overview TEXT,
+	technology TEXT,
+	specification TEXT,
 	price INT(11),
 	PRIMARY KEY (id)
 );
@@ -44,7 +44,7 @@ Gain control over your workflow
 Service you can count on!',
 '',
 250000),
-('Definium 5000',1,1,
+('Definium 5000',1,2,
 'The Definium 5000 is a compact and versatile digital radiography system. 
 It’s well-suited for the demands of high-volume imaging, especially in treatment centers where space is at a premium, 
 such as orthopedic and sports medicine facilities, physician offices, satellite offices and stand-alone imaging centers. 
@@ -60,7 +60,7 @@ orthopedic centers, and to support most general radiology applications.
 It provides excellent image quality, image manipulation and dose reporting. 
 These features help make the system reliable and easy to use while providing high-quality radiographic images in a digital environment.',
 225000),
-('Discovery PET/CT 610',2,1,
+('Discovery PET/CT 610',2,3,
 'GE Healthcare is proud to announce that the Discovery* PET/CT 610 has achieved an absolute sensitivity of 10.0 cps/kBq, 
 the highest level found on any scanner on the market.1 Sensitivity is one of GE’s critical foundations of PET/CT imaging, 
 and this double-digit measurement represents a critical milestone. It means the system is designed to deliver fast and detailed scans at low dose.',
@@ -93,19 +93,19 @@ TRUNCATE DOCUMENTS;
 
 CREATE TABLE IF NOT EXISTS CATEGORYONE (
 	id INT(11) NOT NULL AUTO_INCREMENT,
-	categoryone_name VARCHAR(25) NOT NULL,
+	name VARCHAR(25) NOT NULL,
 	PRIMARY KEY (id)
 );
 TRUNCATE CATEGORYONE;
-INSERT INTO CATEGORYTWO (categoryone_name) VALUES ('Radiography'), ('PET/CT');
+INSERT INTO CATEGORYONE (name) VALUES ('Radiography'), ('PET/CT');
 
 
 CREATE TABLE IF NOT EXISTS CATEGORYTWO (
 	id INT(11) NOT NULL AUTO_INCREMENT,
-	categorytwo_name VARCHAR(25) NOT NULL,
+	name VARCHAR(25) NOT NULL,
 	categoryone_id INT(11) NOT NULL,
 	PRIMARY KEY (id)
 );
 TRUNCATE CATEGORYTWO;
-INSERT INTO CATEGORYTWO (categorytwo_name,categoryone_id) VALUES ('Fixed RAD Systems',1), ('Mobile X-Ray Systems',1), ('PET/CT Scanners',2);
+INSERT INTO CATEGORYTWO (name,categoryone_id) VALUES ('Fixed RAD Systems',1), ('Mobile X-Ray Systems',1), ('PET/CT Scanners',2);
 

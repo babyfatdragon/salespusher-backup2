@@ -26,6 +26,7 @@
 		<bootstrap.version>3.3.4</bootstrap.version>
 		<angularjs.version>1.4.7</angularjs.version>
 		<mysql-connector-java.version>5.1.37</mysql-connector-java.version>
+		<angular-ui-bootstrap.version>0.14.0</angular-ui-bootstrap.version>
 	</properties>
 
 	<dependencies>
@@ -151,6 +152,11 @@
           				 <artifactId>bootstrap</artifactId>
          				 <version>${bootstrap.version}</version>
         			</dependency>
+					<dependency>
+						 <groupId>org.webjars</groupId>
+						 <artifactId>angular-ui-bootstrap</artifactId>
+         				 <version>${angular-ui-bootstrap.version}</version>
+        			</dependency>  					
       			</dependencies>
     		</plugin>
 		</plugins>

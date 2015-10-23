@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.worksap.salespusher.entity.CategoryTwoEntity;
 import com.worksap.salespusher.entity.ProductEntity;
 import com.worksap.salespusher.repository.ProductRepository;
 
@@ -33,4 +34,9 @@ public class ProductsController {
 		return this.productRepository.findOne(id);
 	}
 	
+	@RequestMapping(value = "/categorytwos/{categoryTwoId}/products", method = RequestMethod.GET)
+	@PreAuthorize("isAuthenticated()")
+	public List<ProductEntity> getProducts(@PathVariable int categoryTwoId){
+		return this.productRepository.findBySecondCategory(categoryTwoId);
+	}
 }

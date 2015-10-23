@@ -31,6 +31,11 @@
 	    $scope.login = function() {
 	    	authenticate($scope.credentials, function() {
 	        if ($rootScope.authenticated) {
+	        	/* set $rootScope authority */
+	        	$http.get('/user', {}).success(function(data){
+	        		$rootScope.authority = data.authorities[0].authority;
+	        	});
+
 	        	console.log("login succeeded");
 	        	$location.path("/");
 	        	$scope.error = false;
